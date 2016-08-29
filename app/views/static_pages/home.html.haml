@@ -1,0 +1,7 @@
+.container
+  .row
+    .col-sm-12.text-center.jumbotron
+      %h1 Hello World!
+      = form_for :summoner, url: matches_path(page: 0) do |f|
+        = f.text_field :name
+        = f.submit 'Search'
