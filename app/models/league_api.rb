@@ -10,7 +10,7 @@ class LeagueAPI
       f.use Faraday::Response::RaiseError
       f.use Faraday::Adapter::NetHttp
     end
-    @client.params = {api_key: ENV['API_KEY']}
+    @client.params = { api_key: ENV['API_KEY'] }
   end
 
   def get(uri = '', params: {}, cache_key:)
@@ -18,6 +18,23 @@ class LeagueAPI
       response = client.get(uri) do |req|
         req.params.merge!(params)
       end
+
+      if response.code == 429
+        $redis.set('retry-after', Time.now + response.headers['Retry-After'])
+      end
+
+      if response.headers['X-Rate-Limit-Count']
+        limit_counts = response.headers['X-Rate-Limit-Count'].split(',')
+
+        limit_counts.each do |count|
+          time, requests = count.split(':')
+
+          RateLimit.buffer_limit?(time, requests) do
+            sleep 1
+          end
+        end
+      end
+
       response.body
     end
 

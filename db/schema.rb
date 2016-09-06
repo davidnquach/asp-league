@@ -11,6 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160905231827) do
+
+  create_table "rate_limits", force: :cascade do |t|
+    t.integer  "time"
+    t.integer  "requests"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

@@ -1,8 +1,8 @@
 require 'redis'
 
 class RedisCache < Redis
-  def initialize(host: 'localhost', port: 6379)
-    super(host: host, port: port)
+  def initialize
+    super
 
     ping
   end

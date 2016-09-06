@@ -21,13 +21,6 @@ class MatchList
   end
 
   def info
-    # value = $redis.cache(cache_key(summoner_id)) do
-    #   response = api.get("by-summoner/#{summoner_id}")
-    #   response.body
-    # end
-    #
-    # JSON.parse value, symbolize_names: true
-
     api.get("by-summoner/#{summoner_id}", cache_key: cache_key(summoner_id))
   end
 

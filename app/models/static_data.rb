@@ -15,13 +15,6 @@ class StaticData
   end
 
   def champion_info(id)
-    # value = $redis.cache(cache_key(id)) do
-    #   response = api.get("champion/#{id}")
-    #   response.body
-    # end
-    #
-    # JSON.parse value, symbolize_names: true
-
     api.get("champion/#{id}", cache_key: cache_key(id))
   end
 

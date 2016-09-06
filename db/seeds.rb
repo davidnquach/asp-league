@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Create Rate limits
+RateLimit.create(time: 600, requests: 500)
+RateLimit.create(time: 10, requests: 10)
