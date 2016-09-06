@@ -1,0 +1,7 @@
+1:
+  time: 600
+  requests: 500
+
+2:
+  time: 10
+  requests: 10

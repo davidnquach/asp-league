@@ -1,4 +1,5 @@
 require 'faraday'
+require 'time'
 
 class LeagueAPI
   attr_reader :url
@@ -14,12 +15,14 @@ class LeagueAPI
   end
 
   def get(uri = '', params: {}, cache_key:)
+    return nil if $redis.get('retry-after') && Time.now < Time.parse($redis.get('retry-after'))
+
     value = $redis.cache(cache_key) do
       response = client.get(uri) do |req|
         req.params.merge!(params)
       end
 
-      if response.code == 429
+      if response.status == 429
         $redis.set('retry-after', Time.now + response.headers['Retry-After'])
       end
 
@@ -27,7 +30,7 @@ class LeagueAPI
         limit_counts = response.headers['X-Rate-Limit-Count'].split(',')
 
         limit_counts.each do |count|
-          time, requests = count.split(':')
+          requests, time = count.split(':')
 
           RateLimit.buffer_limit?(time, requests) do
             sleep 1

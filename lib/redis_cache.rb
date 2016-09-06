@@ -10,7 +10,7 @@ class RedisCache < Redis
   def cache(key, options = {}, &block)
     value = get(key)
 
-    unless value
+    if value.nil?
       value = block.call
 
       set(key, value)
