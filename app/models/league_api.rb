@@ -8,10 +8,9 @@ class LeagueAPI
     @host = host
     @url = build_url(host, api_url, region, version, endpoint)
     @client = Faraday.new(url) do |f|
-      f.use Faraday::Response::RaiseError
       f.use Faraday::Adapter::NetHttp
     end
-    @client.params = { api_key: ENV['API_KEY'] }
+    @client.params = {api_key: ENV['API_KEY']}
   end
 
   def get(uri = '', params: {}, cache_key:)
@@ -23,7 +22,12 @@ class LeagueAPI
       end
 
       if response.status == 429
-        $redis.set('retry-after', Time.now + response.headers['Retry-After'])
+        if response.headers['Retry-After']
+          $redis.set('retry-after', Time.now + response.headers['Retry-After'].to_s)
+        else
+          sleep 1
+          return get(uri, params: params, cache_key: cache_key)
+        end
       end
 
       if response.headers['X-Rate-Limit-Count']
