@@ -20,9 +20,6 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-staging:
-  adapter:
-
 production:
   <<: *default
   database: db/production.sqlite3
