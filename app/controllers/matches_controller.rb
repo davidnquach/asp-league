@@ -1,21 +1,21 @@
 class MatchesController < ApplicationController
   def create
-    summoner = Summoner.info_by_name(summoner_params['name'])
+    summoner = API::Summoner.info_by_name(summoner_params['name'])
 
     redirect_to matches_url(id: summoner.id, page: params['page'])
   end
 
   def index
-    matchlist = MatchList.matchlist(summoner_id: params[:id])
+    matchlist = API::MatchList.matchlist(summoner_id: params[:id])
     matches = matchlist.matches[get_range(for_page: params[:page])]
 
     @stats = []
 
     matches.each do |match_info|
       stat = Struct.new(:timestamp, :match, :champion_img, :player)
-      match = Match.details(match_info)
+      match = API::Match.details(match_info)
       main_player = match.participant(params[:id].to_s)
-      data = StaticData.champion_info(match_info[:champion].to_s)
+      data = API::StaticData.champion_info(match_info[:champion].to_s)
 
       @stats << stat.new(match.timestamp, match, data.champion_img, main_player)
     end
