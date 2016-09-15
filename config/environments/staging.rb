@@ -1,4 +1,5 @@
 Rails.application.configure do
+  ENV['REDIS_URL'] = ENV['REDISCLOUD_URL']
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the staging environment your application's code is reloaded on
