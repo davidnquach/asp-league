@@ -9,8 +9,6 @@ deploy:
   on: staging
   run: "rake db:migrate"
 bundler_args: --without development
-env:
-  - RAILS_ENV=staging
 branches:
   only:
   - staging
