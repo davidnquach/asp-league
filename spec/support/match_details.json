@@ -1,0 +1,268 @@
+{
+  "region": "NA",
+  "matchType": "MATCHED_GAME",
+  "matchCreation": 1470982276212,
+  "participants": [
+    {
+      "masteries": [
+        {
+          "rank": 5,
+          "masteryId": 6211
+        },
+        {
+          "rank": 1,
+          "masteryId": 6223
+        },
+        {
+          "rank": 5,
+          "masteryId": 6231
+        },
+        {
+          "rank": 1,
+          "masteryId": 6241
+        },
+        {
+          "rank": 5,
+          "masteryId": 6311
+        },
+        {
+          "rank": 1,
+          "masteryId": 6322
+        },
+        {
+          "rank": 5,
+          "masteryId": 6332
+        },
+        {
+          "rank": 1,
+          "masteryId": 6342
+        },
+        {
+          "rank": 5,
+          "masteryId": 6352
+        },
+        {
+          "rank": 1,
+          "masteryId": 6363
+        }
+      ],
+      "stats": {
+        "unrealKills": 0,
+        "item2": 3092,
+        "item1": 3190,
+        "totalDamageTaken": 16703,
+        "item0": 2045,
+        "pentaKills": 0,
+        "sightWardsBoughtInGame": 0,
+        "winner": true,
+        "magicDamageDealt": 10926,
+        "wardsKilled": 11,
+        "largestCriticalStrike": 0,
+        "trueDamageDealt": 901,
+        "doubleKills": 0,
+        "physicalDamageDealt": 8575,
+        "tripleKills": 0,
+        "deaths": 2,
+        "firstBloodAssist": false,
+        "magicDamageDealtToChampions": 6200,
+        "assists": 25,
+        "visionWardsBoughtInGame": 6,
+        "totalTimeCrowdControlDealt": 192,
+        "champLevel": 15,
+        "physicalDamageTaken": 8126,
+        "totalDamageDealt": 20402,
+        "largestKillingSpree": 2,
+        "inhibitorKills": 0,
+        "minionsKilled": 15,
+        "towerKills": 1,
+        "physicalDamageDealtToChampions": 1896,
+        "quadraKills": 0,
+        "goldSpent": 11800,
+        "totalDamageDealtToChampions": 8096,
+        "goldEarned": 12838,
+        "neutralMinionsKilledTeamJungle": 0,
+        "firstBloodKill": false,
+        "firstTowerKill": false,
+        "wardsPlaced": 31,
+        "trueDamageDealtToChampions": 0,
+        "killingSprees": 1,
+        "firstInhibitorKill": false,
+        "totalScoreRank": 0,
+        "totalUnitsHealed": 5,
+        "kills": 4,
+        "firstInhibitorAssist": true,
+        "totalPlayerScore": 0,
+        "neutralMinionsKilledEnemyJungle": 0,
+        "magicDamageTaken": 8468,
+        "largestMultiKill": 1,
+        "totalHeal": 18118,
+        "item4": 3742,
+        "item3": 2043,
+        "objectivePlayerScore": 0,
+        "item6": 3364,
+        "firstTowerAssist": false,
+        "item5": 3009,
+        "trueDamageTaken": 108,
+        "neutralMinionsKilled": 0,
+        "combatPlayerScore": 0
+      },
+      "runes": [
+        {
+          "rank": 9,
+          "runeId": 5257
+        },
+        {
+          "rank": 3,
+          "runeId": 5289
+        },
+        {
+          "rank": 6,
+          "runeId": 5295
+        },
+        {
+          "rank": 9,
+          "runeId": 5315
+        },
+        {
+          "rank": 3,
+          "runeId": 5357
+        }
+      ],
+      "timeline": {
+        "xpDiffPerMinDeltas": {
+          "zeroToTen": 25.399999999999977,
+          "thirtyToEnd": 54.19999999999999,
+          "tenToTwenty": 13.900000000000034,
+          "twentyToThirty": 186.34999999999997
+        },
+        "damageTakenDiffPerMinDeltas": {
+          "zeroToTen": -59.5,
+          "thirtyToEnd": -508.5999999999999,
+          "tenToTwenty": -170.85000000000002,
+          "twentyToThirty": -127.19999999999999
+        },
+        "xpPerMinDeltas": {
+          "zeroToTen": 258.1,
+          "thirtyToEnd": 343.4,
+          "tenToTwenty": 326,
+          "twentyToThirty": 449.7
+        },
+        "goldPerMinDeltas": {
+          "zeroToTen": 235.39999999999998,
+          "thirtyToEnd": 492,
+          "tenToTwenty": 256.1,
+          "twentyToThirty": 399.1
+        },
+        "role": "DUO_SUPPORT",
+        "creepsPerMinDeltas": {
+          "zeroToTen": 0,
+          "thirtyToEnd": 0.4,
+          "tenToTwenty": 0.5,
+          "twentyToThirty": 0.7
+        },
+        "csDiffPerMinDeltas": {
+          "zeroToTen": 0.40000000000000013,
+          "thirtyToEnd": -0.2999999999999998,
+          "tenToTwenty": 0.6499999999999999,
+          "twentyToThirty": 0.8999999999999999
+        },
+        "damageTakenPerMinDeltas": {
+          "zeroToTen": 231.10000000000002,
+          "thirtyToEnd": 778.6,
+          "tenToTwenty": 384.3,
+          "twentyToThirty": 537.8
+        },
+        "lane": "BOTTOM"
+      },
+      "spell2Id": 4,
+      "participantId": 1,
+      "championId": 267,
+      "teamId": 100,
+      "highestAchievedSeasonTier": "UNRANKED",
+      "spell1Id": 3
+    }
+  ],
+  "platformId": "NA1",
+  "matchMode": "CLASSIC",
+  "participantIdentities": [
+    {
+      "player": {
+        "profileIcon": 625,
+        "matchHistoryUri": "/v1/stats/player_history/NA1/203908151",
+        "summonerName": "renburu",
+        "summonerId": 40981919
+      },
+      "participantId": 1
+    }
+  ],
+  "matchVersion": "6.16.153.6873",
+  "teams": [
+    {
+      "bans": [
+        {
+          "pickTurn": 1,
+          "championId": 39
+        },
+        {
+          "pickTurn": 3,
+          "championId": 8
+        },
+        {
+          "pickTurn": 5,
+          "championId": 268
+        }
+      ],
+      "firstBlood": true,
+      "firstTower": false,
+      "firstInhibitor": true,
+      "winner": true,
+      "firstDragon": true,
+      "vilemawKills": 0,
+      "baronKills": 1,
+      "teamId": 100,
+      "inhibitorKills": 2,
+      "dominionVictoryScore": 0,
+      "riftHeraldKills": 0,
+      "firstRiftHerald": false,
+      "towerKills": 10,
+      "firstBaron": true,
+      "dragonKills": 5
+    },
+    {
+      "bans": [
+        {
+          "pickTurn": 2,
+          "championId": 120
+        },
+        {
+          "pickTurn": 4,
+          "championId": 41
+        },
+        {
+          "pickTurn": 6,
+          "championId": 69
+        }
+      ],
+      "firstBlood": false,
+      "firstTower": true,
+      "firstInhibitor": false,
+      "winner": false,
+      "firstDragon": false,
+      "vilemawKills": 0,
+      "baronKills": 1,
+      "teamId": 200,
+      "inhibitorKills": 0,
+      "dominionVictoryScore": 0,
+      "riftHeraldKills": 0,
+      "firstRiftHerald": false,
+      "towerKills": 2,
+      "firstBaron": false,
+      "dragonKills": 0
+    }
+  ],
+  "mapId": 11,
+  "season": "SEASON2016",
+  "queueType": "RANKED_TEAM_5x5",
+  "matchId": 2264819718,
+  "matchDuration": 2246
+}

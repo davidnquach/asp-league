@@ -15,7 +15,7 @@ module API
     end
 
     def get(uri = '', params: {}, cache_key:)
-      return nil if $redis.get('retry-after') && Time.now < Time.parse($redis.get('retry-after'))
+      return if $redis.get('retry-after') && Time.now < Time.parse($redis.get('retry-after'))
 
       value = $redis.cache(cache_key) do
         response = client.get(uri) do |req|

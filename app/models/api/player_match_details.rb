@@ -16,15 +16,15 @@ module API
     end
 
     def kills
-      @kills = match_details[:stats][:kills]
+      match_details[:stats][:kills]
     end
 
     def deaths
-      @deaths = match_details[:stats][:deaths]
+      match_details[:stats][:deaths]
     end
 
     def assists
-      @assists = match_details[:stats][:assists]
+      match_details[:stats][:assists]
     end
 
     def kda

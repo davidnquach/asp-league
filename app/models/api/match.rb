@@ -8,11 +8,7 @@ module API
       klass = new(info[:matchId])
       details = klass.info
 
-      klass.participants = details[:participants].each_with_object([]) do |detail, participants|
-        identity = details[:participantIdentities].find { |identity| detail[:participantId] == identity[:participantId] }
-        participants << API::PlayerMatchDetails.new(identity: identity, match_details: detail)
-      end
-
+      klass.participants = build_participants(details[:participants], details[:participantIdentities])
       klass.timestamp = Date.strptime((info[:timestamp].to_f/1000).to_s, '%s').strftime('%b %d, %Y')
 
       klass
@@ -28,12 +24,19 @@ module API
     end
 
     def participant(participant_id)
-      participants.find { |participant| participant.id.to_i == participant_id.to_i }
+      participants.find { |participant| participant.id.to_i == participant_id.to_i } if participants
     end
 
     attr_reader :api
 
     private
+
+    def self.build_participants(details, identities)
+      details.each_with_object([]) do |detail, participants|
+        identity = identities.find { |identity| detail[:participantId] == identity[:participantId] }
+        participants << API::PlayerMatchDetails.new(identity: identity, match_details: detail)
+      end
+    end
 
     def cache_key(id)
       "match:#{id}"
