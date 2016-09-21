@@ -8,7 +8,7 @@ deploy:
   app: asp-league-staging
   on: staging
   run: "rake db:migrate"
-script: rails db:migrate
+script: bundle exec rails db:migrate && bundle exec rake
 bundler_args: --without development
 branches:
   only:
