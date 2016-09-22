@@ -7,5 +7,6 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  WebMock.allow_net_connect!
 end
+
+WebMock.allow_net_connect!
