@@ -1,8 +1,8 @@
 require 'redis'
 
 class RedisCache < Redis
-  def initialize
-    super
+  def initialize(args = {})
+    super(args)
 
     ping
   end

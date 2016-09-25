@@ -2,6 +2,10 @@ version: '2'
 services:
   redis:
     image: redis
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+      - ./dump.rdb:/dump.rdb
+    command: redis-server /usr/local/etc/redis/redis.conf
     expose:
       - 6379
   web:
@@ -15,4 +19,4 @@ services:
       API_KEY:
       REDIS_URL: redis://redis
     links:
-      - redis:redis
+      - redis
