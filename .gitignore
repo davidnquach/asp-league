@@ -21,3 +21,4 @@
 
 # Ignore Redis files
 dump.rdb
+redis.conf
