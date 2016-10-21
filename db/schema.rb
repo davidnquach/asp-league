@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20160905231827) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "rate_limits", force: :cascade do |t|
     t.integer  "time"
     t.integer  "requests"
