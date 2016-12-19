@@ -3,18 +3,21 @@ rvm:
 - 2.3.1
 cache: bundler
 before_script:
-  - psql -c 'create database test;' -U postgres
+- psql -c 'create database test;' -U postgres
 services:
-  - postgresql
+- postgresql
 deploy:
   provider: heroku
   api_key:
     secure: Vhvs+Y7M4ypVXcUVVQrmBohtvcq248Z3s5nvLw2yWvt5rG06PUMj8F2Kr7gWAx7RK3ue42Up9keMR+ZjEw0RhxCo4+Spqh5irLpN5sdJerrZCTF9BtTLDqWyGqwqb4G3E1zWrSwptp12SROqy8a2pTmw5/zz9/l40bHmP0M/i5IyGqXD8/IPBerV4sYH8bw+9QTgSZJUD5J02I62iM0UKN+IEWhUYCvq8zjGea4KKYB2dUQhHHYnCawEd9Y37uVWppfVp+AWY9IrztNkJdCia55euXohMXch3+cLNwAbDE8LcewCP9ECpZgBj8MlfIp09DcM9FUQgsTO+SMyIBCvUTTVv07LQ2JyeT6OE8TK4OtU7wI8u4MXHUGgjHCIh7yIjKS93Uc/LJBefXGv/wEF/VwaHHkkD0TfsGLq9LI5zpin9EN3mduhAsvYBtE/R0BHqOHoxTuWleXUzrGX7FBwyv2BhOQZZsGYnru//aeUYqnpHn1P6vUDmFVdBFrBVQiqb6smlmtEnVYOjaIxsava+tFhuEDwPiRl1VZzTTH4ljH8NaBse4/erAKT64yuA+WheqEnssI6n0nJecMr1OM4HY6M7SJtmmGXb1M3ei9d4XFUNZ9hwfVvSe9C7w6T3FW8p5VUXI8Jk22CpUnBIFhsuA9Fy2/u+G79epOsoRm0fcQ=
   app: asp-league-staging
   on: staging
-  run: "rake db:migrate"
+  run: rake db:migrate
 script: bundle exec rails db:migrate && bundle exec rake
-bundler_args: --without development
+bundler_args: "--without development"
 branches:
   only:
   - staging
+notifications:
+  slack:
+    secure: crNdrBsU5ksPWuLU2r171OeBysmldygkX4vzZHchIp6PD5MoE/RddorBB1UKzxyMlDNS9Ro7/gVmNOD+snrMHaaUoskX9LdKSJ7WsX9amLTUHtns2qtFejMFGxhdPad1lc/qlJqsZvmvuT722xQjshrkqokOU2wtviSef3yQ9En8HwEhoUjupTO67MCxNvVPIlN7z6GBJSRhK/XTkzJqD/DMSClbsCiedjP99B1AqTEhtWUn/2+VvrJ+GxpAgQh2b6f2L8iYORJfjjQKt4eWaKEnPr72ZdG3+jH4xDXfyNVTC156iCs9ZoS63Tr+2MHqNmkgRDga9pY48IQ5J6nT5c8EQwt9+4wgBOl6epOMu1PPrpKMuANmiCDtKUoaYpA8waia3JJ/FHCWq9YpI1QrjnI6nW1wXUIhwUp7ZvBGvpn+hTwdkLAzNttywVSw4+Qlfgqq0TxUpXUnpZynkjpv2s/3MB6dO3xSZzZxLaHg6XCvXZthur5Vko2+Hkkknfr/twjOdEH3zT4yxC51LheMP/wginonzYaoFLD2sbVbyXgknHoicc25+R/9vobxXfPB8Aa6+42s3VyxqhdKUqom6BPfRa2D/b6rEAhL8/lSIy1H+QtMR9qdyw79u1qRVVMZ5pLCiF62uAkdklb5ioXlYOAJWC/WS9t82/z3VWChz7M=
