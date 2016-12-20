@@ -7,7 +7,7 @@ module API
     def self.info_by_name(name)
       klass = new(name)
       details = klass.info
-      summoner = details[name.to_sym]
+      summoner = details[name.downcase.to_sym]
 
       klass.id = summoner[:id]
       klass.profile_icon_id = summoner[:profileIconId]

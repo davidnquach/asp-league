@@ -47,6 +47,9 @@ group :development, :staging, :test do
   gem 'rspec-rails'
 
   gem 'webmock'
+
+  gem 'pry'
+  gem 'pry-byebug'
 end
 
 # Access an IRB console on exception pages or by using <%= console %> in views

@@ -1,0 +1,6 @@
+upper_limit:
+  time: 600
+  requests: 500
+lower_limit:
+  time: 10
+  requests: 10

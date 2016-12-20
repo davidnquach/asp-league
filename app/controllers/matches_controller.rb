@@ -24,7 +24,7 @@ class MatchesController < ApplicationController
   private
 
   def summoner_params
-    params.require(:summoner).permit(:name)
+    params.require(:summoner).permit(:name, :page)
   end
 
   def get_range(for_page:)
